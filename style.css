@@ -1,0 +1,575 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+:root{
+    --text-shadow: 0 0 10px rgb(0, 0, 0, 0.25);
+}
+  
+* {  
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(33, 37, 41);
+}
+
+#macbook {
+    width: 860px;
+    margin: 0 auto;
+}
+
+#macbook .screen {
+    height: 580px;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective: 2500;
+    -webkit-perspective-origin: center bottom;
+}
+
+#macbook.clicked .screen-close {
+    bottom: 0;
+    transform: rotateX(0deg) scale(1);
+    transition: all 1s ease-in-out, bottom .1s ease-in-out .9s;
+}
+
+#macbook.clicked .screen-open {
+    transform: translateZ(-580px) rotateX(-90deg);
+}
+
+#macbook .screen-open::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 4px;
+    left: 50%;
+    margin-left: -4px;
+    top:13px;
+    box-shadow: 
+        inset 1px 1px 0 0 #0D1115,
+        inset 2px 2px 0 0 #090C0F,
+        inset 3px 3px 0 0 #0C0E12,
+        inset 4px 4px 0 0 #0B1628,
+        inset -1px -1px 0 0 #202428,
+        inset -2px -2px 0 0 #1C1F23,
+        inset -3px -3px 0 0 #15171A,
+        inset -4px -4px 0 0 #171D25;
+    background: #041423;
+    position: absolute;
+    z-index: 1000;
+}
+
+#macbook .screen-close {
+    position: absolute;  
+    bottom: -5px;
+    width: 860px;
+    height: 13px;
+    background: -webkit-linear-gradient(top, #acadb3 0%, #acadb3 2%, #91939b 2%, #91939b 4%, #a7a9b0 4%, #F5F6F7 67%, #F5F6F7 100%);
+    border-radius: 150px / 9px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 2px;
+    box-shadow: 
+        inset 10px 0 10px -12px #000,
+        inset 60px 0 70px -60px #FFF,
+        inset 60px 0 70px -60px #FFF,
+        inset 100px 0 150px -100px #000,
+        inset -10px 0 10px -12px #000,
+        inset -60px 0 70px -60px #FFF,
+        inset -60px 0 70px -60px #FFF,
+        inset -100px 0 150px -100px #000,
+        0 4px 0 -3px #727379,
+        0 6px 0 -4px #1A1A1C;
+
+    transform: rotateX(90deg) scale(0.9);
+    transform-origin: center bottom -580px;
+    transition: all 1s ease-in-out, bottom .1s ease-in-out;
+}
+
+#macbook .screen-open {
+    height: 578px;
+    width: 856px;
+    position: relative;
+    border-radius: 26px 26px 10px 10px;
+    background-color: #000;
+    border: 2px solid #C8C9CC;
+    border-bottom: none;
+    box-shadow: 
+        inset 0 -11px 0 0 #16191D,
+        inset 0 -12px 0 0 #111418,
+        inset 0 -13px 0 0 #262A2F,
+        inset 0 -14px 0 0 #16191D,
+        inset 0 0 0 1px #1B1E21,
+        inset 0 0 0 2px #3D4248,
+        inset 0 0 0 3px #181B1F;  
+
+    transform: translateZ(-580px) rotateX(0deg);
+    transform-origin: center bottom;
+    transition: all 1s ease-in-out;
+}
+
+#macbook .body {
+    position: relative;
+    width: 100%;
+    height: 27px;
+    border-radius: 30px / 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background: -webkit-linear-gradient(top, #ffffff 0%, #fefdff 2%, #dfdee3 2%, #dfdee3 58%, #adadb5 58%, #adadb5 60%, #8e8e96 60%, #8e8e96 65%, #96969e 65%, #62626a 84%, #28282a 98%, #28282a 100%);
+    box-shadow: 
+        inset 10px 0 10px -12px #000,
+        inset 60px 0 70px -60px #FFF,
+        inset 60px 0 70px -60px #FFF,
+        inset 100px 0 150px -100px #000,
+        inset -10px 0 10px -12px #000,
+        inset -60px 0 70px -60px #FFF,
+        inset -60px 0 70px -60px #FFF,
+        inset -100px 0 150px -100px #000;
+}
+
+#macbook .body::before {
+    content: "";
+    width: 120px;
+    margin-left: -60px;
+    height: 10px;
+    position: absolute;
+    background: -webkit-linear-gradient(top, #afafb7 0%, #c9cacf 31%, #ccccce 100%);
+    top: 0;
+    left: 50%;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 
+        inset 10px 0 10px -10px #000,
+        inset -10px 0 10px -10px #000,
+        inset 0 -10px 2px -10px rgba(0, 0, 0, 0.2);
+}
+  
+  
+  
+.wrapper {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: white;
+    font-size: 0.85rem;
+    background: url(https://wallpapercave.com/wp/wp9139434.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 94%;
+    left: 3%;
+    height: 88%;
+    top: 6%;
+}
+  
+.taskbar {
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+background: rgb(40,40,40,0.25);
+backdrop-filter: blur(15px);
+    padding: 0 0.5rem;
+    justify-content: space-between;
+}
+
+.right-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.right-container svg {
+    color: white;
+    height: 1.25rem;
+    width: 1.25rem;
+    text-shadow: var(--text-shadow);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 1rem;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 1rem;
+    cursor: pointer;
+    text-shadow: var(--text-shadow);
+    color: white;
+}
+
+nav li.active {
+    font-weight: 600;
+}
+
+p {
+    text-shadow: var(--text-shadow);
+}
+
+
+
+.dock {
+    width: auto;
+    height: 50px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dock .dock-container {
+    padding: 3px;
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: rgba(83, 83, 83, 0.25);
+    backdrop-filter: blur(13px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.dock .dock-container .li-bin {
+    margin-left: 20px;
+    border-left: 1.5px solid rgba(255, 255, 255, 0.4);
+    padding: 0px 10px;
+}
+
+.dock .dock-container .li-1::after {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    content: "";
+    bottom: 2px;
+}
+
+.dock .dock-container li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    vertical-align: bottom;
+    transition: 0.2s;
+    transform-origin: 50% 100%;
+}
+
+.dock .dock-container li:hover {
+    margin: 0px 13px 0px 13px;
+}
+
+.dock .dock-container li .name {
+    position: absolute;
+    top: -70px;
+    background: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+    height: 10px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    visibility: hidden;
+}
+
+.dock .dock-container li .name::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgba(0, 0, 0, 0.5);
+}
+
+.dock .dock-container li .ico {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.2s;
+}
+
+.dock .dock-container li .ico-bin {
+    width: 94% !important;
+    height: 94% !important;
+    object-fit: cover;
+    transition: 0.2s;
+}
+
+.dock .dock-container li .ico-bin:hover {
+    margin-left: 10px;
+}
+
+.li-1:hover .name {
+    visibility: visible !important;
+}
+
+.li-2:hover .name {
+    visibility: visible !important;
+}
+
+.li-3:hover .name {
+    visibility: visible !important;
+}
+
+.li-4:hover .name {
+    visibility: visible !important;
+}
+
+.li-5:hover .name {
+    visibility: visible !important;
+}
+
+.li-6:hover .name {
+    visibility: visible !important;
+}
+
+.li-7:hover .name {
+    visibility: visible !important;
+}
+
+.li-8:hover .name {
+    visibility: visible !important;
+}
+
+.li-9:hover .name {
+    visibility: visible !important;
+}
+
+.li-10:hover .name {
+    visibility: visible !important;
+}
+
+.li-11:hover .name {
+    visibility: visible !important;
+}
+
+.li-12:hover .name {
+    visibility: visible !important;
+}
+
+.li-13:hover .name {
+    visibility: visible !important;
+}
+
+.li-14:hover .name {
+    visibility: visible !important;
+}
+
+.li-15:hover .name {
+    visibility: visible !important;
+}
+
+.li-16:hover .name {
+    visibility: visible !important;
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+.window {
+    display: none;
+    position: absolute;
+    width: 90%;
+    height: 70%;
+    margin: 2.5% 5%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgb(17 17 17) 0px 2px 5px;
+    transition: .2s;
+    z-index: 5;
+}
+
+.head {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    cursor: default;
+    background-color: #EDEFF3;
+    border-bottom: 2px solid #D9D9D9;
+    border-radius: 20px 20px 0 0;
+}
+
+.head button {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    margin: 10px 5px 10px;
+    cursor: pointer;
+    border: rgba(0, 0, 0, 0.2) solid 0.5px;
+}
+
+.close {
+    background-color: #FF605C;
+}
+
+.minimize {
+    background-color: #FFBD44;
+}
+
+.extend {
+    background-color: #00CA4E;
+}
+
+.head span {
+    font-size: .85rem;
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-weight: 1000;
+}
+
+.content {
+    height: calc(100% - 40px);
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 2.5px;
+}
+
+#editor {
+    width: 100%;
+    height: 100%;
+    color: rgba(0, 0, 0, 1);
+    font-size: 11px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#editor line {
+    white-space: pre;
+}
+
+#editor input {    
+  background: none;
+  width: calc(100% - 20px);
+  border: none;
+  padding: 0;
+  font-size: 11px;
+  font-family: 'Roboto Mono', monospace;
+  outline: none;
+}
+
+#calculator {
+    width: fit-content;
+    height: fit-content;
+    background-color: #504e53;
+    box-shadow: none;
+}
+
+#calculator .head {
+    height: 13px;
+    background-color: transparent;
+    border-bottom: none;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+    grid-auto-columns: 13px;
+    align-items: center;
+    padding: 0;
+}
+
+#calculator .head button {
+    margin: 10px 0 0 10px;
+}
+
+.display {
+    width: 95%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 100;
+}
+  
+  .row {
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+  
+  button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #8e8e8e;
+    border-left: 0;
+    border-bottom: 0;
+    background-color: #e0e0e0;
+    width: 58px;
+    color: black;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 300;
+    font-size: 22px; 
+}
+  
+.zero {
+    width: 117px;
+}
+  
+.func {
+    background-color: #d6d6d6;
+    font-size: 18px;
+    font-weight: 400;
+}
+  
+.math {
+    background-color: #fe9340;
+    color: white;
+    width: 60px;
+    font-size: 26px;
+    border-right: 0;
+}
+  
+.row button:active {
+    background-color: darkgray;
+}
+  
+.math:active {
+    background-color: #c47426;
+    color: #555555;
+}
+  
+.bottom-left {
+    border-radius: 0 0 0 20px;
+}
+  
+.bottom-right {
+    border-radius: 0 0 20px 0;
+}
+  
+.left-padding {
+    margin-right: 55px;
+}
+
+.window.fullScreen {
+    width: 100%;
+    height: 98%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    border-radius: 0px;
+}
+
+.window.fullScreen .head, .window.fullScreen .content {
+    border-radius: 0px;
+}

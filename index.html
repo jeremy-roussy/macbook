@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <title>Macbook</title>
+</head>
+<body>
+    <div id="macbook">
+        <div class="screen">
+            <div class="screen-close"></div>
+            <div class="screen-open">
+                <div class="wrapper">
+                    <div class="taskbar">
+                        <nav>
+                            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Icon-Mac.svg" />
+                            <ul>
+                                <li class="active">Finder</li>
+                                <li>File</li>
+                                <li>Edit</li>
+                                <li>View</li>
+                                <li>Go</li>
+                                <li>Window</li>
+                                <li>Help</li>
+                            </ul>
+                        </nav>
+                        <div class="right-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill:currentColor;"><path d="M12 6c3.537 0 6.837 1.353 9.293 3.809l1.414-1.414C19.874 5.561 16.071 4 12 4c-4.071.001-7.874 1.561-10.707 4.395l1.414 1.414C5.163 7.353 8.463 6 12 6zm5.671 8.307c-3.074-3.074-8.268-3.074-11.342 0l1.414 1.414c2.307-2.307 6.207-2.307 8.514 0l1.414-1.414z"></path><path d="M20.437 11.293c-4.572-4.574-12.301-4.574-16.873 0l1.414 1.414c3.807-3.807 10.238-3.807 14.045 0l1.414-1.414z"></path><circle cx="12" cy="18" r="2"></circle></svg>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>ionicons-v5-d</title><rect x="32" y="144" width="400" height="224" rx="45.7" ry="45.7" style="fill:none;stroke:currentColor;stroke-linecap:square;stroke-miterlimit:10;stroke-width:32px"/><rect x="85.69" y="198.93" width="154.31" height="114.13" rx="4" ry="4" style="fill:currentColor;stroke:currentColor;stroke-linecap:square;stroke-miterlimit:10;stroke-width:32px"/><line x1="480" y1="218.67" x2="480" y2="293.33" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/></svg>
+
+                            <p id="localDateTime"></p>
+                        </div>
+                    </div>
+                    
+                    <div id="terminal" class="window">
+                        <div class="head">
+                            <button class="close"></button>
+                            <button class="minimize"></button>
+                            <button class="extend"></button>
+
+                            <span >jeremyroussy ― -zsh ― 80×24</span>
+                        </div>
+                        <div class="content">
+                            <div id="editor">
+                                <div class="command line">
+                                    <span class="prompt">$</span>
+                                    <input type="text" autocomplete="off" id="command" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="calculator" class="window">
+                        <div class="head">
+                            <button class="close"></button>
+                            <button class="minimize"></button>
+                            <button class="extend"></button>
+                        </div>
+                        <div class="content">
+                            <div class="display">
+                                <span class="result">0</span>
+                            </div>
+                
+                            <div class="row">
+                                <button data-clear class="func">AC</button>
+                                <button data-sign class="func">&#x207a;&#x2044;&minus;</button>
+                                <button data-percent class="func">%</button>
+                                <button data-opt="/" class="math">÷</button>
+                            </div>
+                
+                            <div class="row">
+                                <button data-number="7" class="number">7</button>
+                                <button data-number="8" class="number">8</button>
+                                <button data-number="9" class="number">9</button>
+                                <button data-opt="*" class="math" >×</button>
+                            </div>
+                
+                            <div class="row">
+                                <button data-number="4" class="number">4</button>
+                                <button data-number="5" class="number">5</button>
+                                <button data-number="6" class="number">6</button>
+                                <button data-opt="-" class="math">−</button>
+                            </div>
+                
+                            <div class="row">
+                                <button data-number="1" class="number">1</button>
+                                <button data-number="2">2</button>
+                                <button data-number="3">3</button>
+                                <button data-opt="+" class="math">+</button>
+                            </div>
+                
+                            <div class="row">
+                                <button data-number="0" class="zero bottom-left"><span class="left-padding">0</span></button>
+                                <button data-decimal>.</button>
+                                <button data-equal class="math bottom-right">=</button>
+                            </div>                            
+                        </div>
+                    </div>
+                
+                    <div class="dock">
+                        <div class="dock-container">
+                            <li class="li-1">
+                                <div class="name">Finder</div>
+                                <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853981255cc36b3a37af_finder.png" alt="">
+                            </li>
+                            <li class="li-2">
+                                <div class="name">Siri</div>
+                                <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853ff3bafbac60495771_siri.png" alt="">
+                            </li>
+                            <li class="li-3">
+                                <div class="name">LaunchPad</div>
+                                <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853943597517f128b9b4_launchpad.png" alt="">
+                            </li>
+                            <li class="li-4">
+                                <div class="name">Contacts</div>
+                                <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853743597518c528b9b3_contacts.png" alt="">
+                            </li>
+                            <li class="li-5">
+                                <div class="name">Notes</div>
+                                <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853c849ec3735b52cef9_notes.png" alt="">
+                            </li>
+                            <li class="li-6">
+                                <div class="name">Reminders</div>
+                                <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853d44d99641ce69afeb_reminders.png" alt="">
+                            </li>
+                            <li class="li-7">
+                                <div class="name">Photos</div>
+                                <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853c55558a2e1192ee09_photos.png" alt="">
+                            </li>
+                            <li class="li-8">
+                                <div class="name">Messages</div>
+                                <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853a55558a68e192ee08_messages.png" alt="">
+                            </li>
+                            <li class="li-9">
+                                <div class="name">FaceTime</div>
+                                <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f708537f18e2cb27247c904_facetime.png" alt="">
+                            </li>
+                            <li class="li-10">
+                                <div class="name">Music</div>
+                                <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853ba0782d6ff2aca6b3_music.png" alt="">
+                            </li>
+                            <li class="li-11">
+                                <div class="name">Podcasts</div>
+                                <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853cc718ba9ede6888f9_podcasts.png" alt="">
+                            </li>
+                            <li class="li-12">
+                                <div class="name">TV</div>
+                                <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f708540dd82638d7b8eda70_tv.png" alt="">
+                            </li>
+                            <li class="li-12">
+                                <div class="name">App Store</div>
+                                <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853270b5e2ccfd795b49_appstore.png" alt="">
+                            </li>
+                            <li class="li-14">
+                                <div class="name">Safari</div>
+                                <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853ddd826358438eda6d_safari.png" alt="">
+                            </li>
+                            <li class="li-15">
+                                <div class="name">Calculator</div>
+                                <img class="ico" src="./assets/calculator.png" alt="">
+                            </li>
+                            <li class="li-bin li-16">
+                                <div class="name">Bin</div>
+                                <img class="ico ico-bin" src="https://findicons.com/files/icons/569/longhorn_objects/128/trash.png" alt="">
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body"></div>
+    </div>
+</body>
+</html>
